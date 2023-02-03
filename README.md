@@ -3,5 +3,5 @@
 # Description
 
 # Technologies Used
-
-# Lessons Learned# BlackjackProject
+Java, OOP
+# Lessons Learned
