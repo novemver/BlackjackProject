@@ -9,10 +9,14 @@ public class Card {
 	public int getValue() {
 		return rank.getValue();
 	}
-	
+
 	public Card(Suit st, Rank rk) {
 		suit = st;
 		rank = rk;
+	}
+
+	public Card() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Rank getRank() {
@@ -22,6 +26,8 @@ public class Card {
 	public void setRank(Rank rank) {
 		this.rank = rank;
 	}
+	
+
 
 	public Suit getSuit() {
 		return suit;
@@ -33,7 +39,7 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return "Card: " + rank + " of " + suit;
+		return "Card: " + rank + "of " + suit;
 	}
 
 	@Override
@@ -52,6 +58,5 @@ public class Card {
 		Card other = (Card) obj;
 		return rank == other.rank && suit == other.suit;
 	}
-	
 
 }
