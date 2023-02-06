@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Deck {
 
-	private List deckList = new ArrayList<>();
+	private List<Card> deckList = new ArrayList<>();
 
 //each deck has 52 cards.lets create them
 //for each of the 4 suits create each of the 14 ranks.
@@ -23,7 +23,8 @@ public class Deck {
 	}
 
 	public int checkSize() {
-		return deckList.size();
+	return deckList.size();
+	
 	}
 	
 

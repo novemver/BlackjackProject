@@ -16,13 +16,6 @@ public abstract class Hand {
 
 	public void clear() {
 	}
-	
-//	public void handSum(Hand l) {
-//		int score = 0;
-//	for(int i = 0; i < ((CharSequence) l).length(); i++) {
-//		 score += l.getValue();
-//	}
-
 
 	public String toString() {
 		return "" + cardHand;

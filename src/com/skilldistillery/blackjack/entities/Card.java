@@ -16,7 +16,6 @@ public class Card {
 	}
 
 	public Card() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Rank getRank() {
@@ -26,8 +25,6 @@ public class Card {
 	public void setRank(Rank rank) {
 		this.rank = rank;
 	}
-	
-
 
 	public Suit getSuit() {
 		return suit;

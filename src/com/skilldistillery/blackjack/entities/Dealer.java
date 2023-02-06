@@ -11,23 +11,32 @@ public class Dealer {
 	private Hand dHand = new BlackjackHand();
 	private int score = 0;
 	private int gamesWon = 0;
+	private int cardsRemaining = 0;
 
 	public void shuffleDeck() {
 		dealerDeck.shuffleDeck();
 	}
+
 	public void dealPlayerCard(Player p) {
 		Card playerCard = dealerDeck.dealCard();
 		p.receiveCard(playerCard);
-		
+
 	}
+
+	public void dealerClear() {
+
+	}
+
 	public void dealDealerCard(Dealer d) {
 		Card dealerCard = dealerDeck.dealCard();
 		dHand.addCard(dealerCard);
 		score += dealerCard.getValue();
 	}
-	
-	
-	
+
+	public void dealerCheckCardsRemaining() {
+		cardsRemaining = dealerDeck.checkSize();
+		System.out.println("Cards remainging: " + cardsRemaining);
+	}
 
 	public Deck getDealerDeck() {
 		return dealerDeck;
@@ -64,12 +73,13 @@ public class Dealer {
 	public void displayScore() {
 		System.out.println("Dealer Hand Total: " + score);
 	}
+
 	public void displayDealerGamesWon() {
 		System.out.println("Dealer Games Won: " + gamesWon);
 	}
 
 	public void dealTheMenu() {
-		System.out.println(dealerDeck.checkSize() + " cards remaining \n" + "Please choose: \n1. Hit \n2. Stand");
+		System.out.println("Please choose: \n1. Hit \n2. Stand");
 	}
 
 	public void dealerHandDisplay() {
@@ -80,18 +90,12 @@ public class Dealer {
 
 	}
 
-	public boolean isBust() {
-		
+	public boolean dIsBust(Dealer d) {
+		if (d.getScore() > 21) {
+			System.out.println("Dealer Bust");
+			return false;
+		}
 		return false;
-	}
-
-	public void addCard() {
-
-	}
-
-	public void clear() {
-		// TODO Auto-generated method stub
-
 	}
 
 }
