@@ -8,6 +8,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class Dealer {
 	private Deck dealerDeck = new Deck();
+//	private Hand dHand = new BlackjackHand();
 	private Hand dHand = new BlackjackHand();
 	private int score = 0;
 	private int gamesWon = 0;
@@ -23,8 +24,10 @@ public class Dealer {
 
 	}
 
-	public void dealerClear() {
-
+	public Hand dealerClear() {
+		setScore(0);
+		dHand.clear();
+		return dHand;
 	}
 
 	public void dealDealerCard(Dealer d) {
@@ -34,8 +37,8 @@ public class Dealer {
 	}
 
 	public void dealerCheckCardsRemaining() {
-		cardsRemaining = dealerDeck.checkSize();
-		System.out.println("Cards remainging: " + cardsRemaining);
+		setCardsRemaining(dealerDeck.checkSize());
+		System.out.println("Cards remainging: " + getCardsRemaining());
 	}
 
 	public Deck getDealerDeck() {
@@ -50,8 +53,8 @@ public class Dealer {
 		return dHand;
 	}
 
-	public void setdHand(Hand dHand) {
-		this.dHand = dHand;
+	public Hand setdHand(Hand dHand) {
+		return this.dHand = dHand;
 	}
 
 	public int getScore() {
@@ -63,11 +66,13 @@ public class Dealer {
 	}
 
 	public int getGamesWon() {
+		System.out.println("Games won: " + gamesWon);
 		return gamesWon;
 	}
 
 	public void setGamesWon(int gamesWon) {
 		this.gamesWon = gamesWon;
+		
 	}
 
 	public void displayScore() {
@@ -79,7 +84,7 @@ public class Dealer {
 	}
 
 	public void dealTheMenu() {
-		System.out.println("Please choose: \n1. Hit \n2. Stand");
+		System.out.println("Please choose: \n1. Hit \n2. Stay ");
 	}
 
 	public void dealerHandDisplay() {
@@ -93,9 +98,17 @@ public class Dealer {
 	public boolean dIsBust(Dealer d) {
 		if (d.getScore() > 21) {
 			System.out.println("Dealer Bust");
-			return false;
+			return true;
 		}
 		return false;
+	}
+
+	public int getCardsRemaining() {
+		return cardsRemaining;
+	}
+
+	public void setCardsRemaining(int cardsRemaining) {
+		this.cardsRemaining = cardsRemaining;
 	}
 
 }

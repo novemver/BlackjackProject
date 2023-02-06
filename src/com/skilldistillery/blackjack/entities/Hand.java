@@ -15,6 +15,7 @@ public abstract class Hand {
 	}
 
 	public void clear() {
+		cardHand.clear();
 	}
 
 	public String toString() {

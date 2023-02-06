@@ -1,7 +1,5 @@
 package com.skilldistillery.blackjack.app;
 
-import java.util.Scanner;
-
 import com.skilldistillery.blackjack.entities.BlackjackHand;
 import com.skilldistillery.blackjack.entities.Dealer;
 import com.skilldistillery.blackjack.entities.Player;

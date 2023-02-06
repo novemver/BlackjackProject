@@ -3,6 +3,7 @@ package com.skilldistillery.blackjack.entities;
 import java.util.Objects;
 
 public class Player {
+//	private Hand pHand = new BlackjackHand();
 	private Hand pHand = new BlackjackHand();
 	private int score = 0;
 	private int gamesWon = 0;
@@ -16,7 +17,13 @@ public class Player {
 	}
 
 	public int getGamesWon() {
+		System.out.println("Games won " + gamesWon);
 		return gamesWon;
+	}
+	public Hand playerClear() {
+		setScore(0);
+		pHand.clear();
+		return pHand;
 	}
 
 	public void setGamesWon(int gamesWon) {
@@ -35,7 +42,7 @@ public class Player {
 	public boolean pIsBust(Player p) {
 		if (p.getScore() > 21) {
 			System.out.println("Player Bust");
-			return false;
+			return true;
 		}
 		return false;
 	}
